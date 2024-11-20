@@ -1,1 +1,56 @@
 body{margin: 0;padding: 0;color: white;overflow-x: hidden;font-family: 'Tajawal',sans-serif}.header{padding: 60px;text-align: center;background: #1abc9c;color: white;font-size: 30px}.footer{position: fixed;z-index: 2;right: 0;bottom: 0;height: 100vh;width: 100vw;background-color:rgba(0,0,0,0.85);border: 0px solid;display: table}.space{margin-top: 1200px}.video-container video{position: fixed;right: 0;bottom: 0;min-width: 100vw;min-height: 100vh;transform: translateX(calc((100% - 100vw) / 2))}.video-container{z-index: 1}.text-container{position: fixed;z-index: 3;top: 0;left:0;height: 100vh;width: 100vw;border: 0px solid;display: table}.content{text-align: center;padding: 20px;display: table-cell;vertical-align: middle}.content h2{font-family: 'Pacifico', cursive;letter-spacing: 0.2em;background: linear-gradient(to right, #C564A0, #E35B8F , #E55982, #E04F80, #C84F68);-webkit-background-clip: text;background-clip: text;color: transparent;animation: rainbow_animation 6s ease-in-out infinite;background-size: 400% 100%}.content h4{font-family: 'Tajawal',sans-serif;letter-spacing: 0.2em;background: linear-gradient(to right, #C564A0, #E35B8F , #E55982, #E04F80, #C84F68);-webkit-background-clip: text;background-clip: text;color: transparent;animation: rainbow_animation 6s ease-in-out infinite;background-size: 400% 100%}.h-button{background: linear-gradient(to right, #C564A0, #E35B8F , #E55982, #E04F80, #C84F68);border-color: black;-webkit-background-clip: text;background-clip: text;color: transparent;font-size: 10px;font-weight: bold;padding: 5px 20px;border-width: 0;cursor: pointer;animation: rainbow_animation 6s ease-in-out infinite;background-size: 400% 100%}.h-button:active{font-size: 9px}@media only screen and (min-width:768px){.video-container video{width: auto;height: auto}.content h2{font-size: 30px}.h-button{font-size: 13px}.h-button:active{font-size: 12px}}#shadowBox{background-color: rgb(0, 0, 0);background-color: rgba(0, 0, 0, 0.2);border: 3px solid}.rainbow{text-align: center;text-decoration: underline;font-size: 32px;font-family: monospace;letter-spacing: 5px}.rainbow_text_animated{background: linear-gradient(to right, #6666ff, #0099ff , #00ff00, #ff3399, #6666ff);-webkit-background-clip: text;background-clip: text;color: transparent;animation: rainbow_animation 6s ease-in-out infinite;background-size: 400% 100%}@keyframes rainbow_animation{0%,100%{background-position: 0 0}50%{background-position: 100% 0}}
+* {
+    box-sizing: border-box;
+     }
+ 
+     body {
+     margin: 0;
+     font-family: Arial;
+     }
+ 
+     .header {
+     text-align: center;
+     padding: 32px;
+     }
+ 
+     .row {
+     display: -ms-flexbox; /* IE10 */
+     display: flex;
+     -ms-flex-wrap: wrap; /* IE10 */
+     flex-wrap: wrap;
+     padding: 0 4px;
+     z-index:9999
+     }
+ 
+     /* Create four equal columns that sits next to each other */
+     .column {
+     -ms-flex: 25%; /* IE10 */
+     flex: 25%;
+     max-width: 25%;
+     padding: 0 4px;
+     z-index:9999
+     }
+ 
+     .column img {
+     margin-top: 8px;
+     vertical-align: middle;
+     width: 100%;
+     }
+ 
+     /* Responsive layout - makes a two column-layout instead of four columns */
+     @media screen and (max-width: 800px) {
+     .column {
+     -ms-flex: 50%;
+     flex: 50%;
+     max-width: 50%;
+     }
+     }
+ 
+     /* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
+     @media screen and (max-width: 600px) {
+     .column {
+     -ms-flex: 100%;
+     flex: 100%;
+     max-width: 100%;
+     }
+     }
