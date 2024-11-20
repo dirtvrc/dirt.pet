@@ -1,40 +1,50 @@
-<!DOCTYPE HTML>
-<!--
-/*
- * Photobox
- * Copyright 2012, Yair Even Or
- * https://github.com/yairEO/photobox
- */
--->
-<html lang="en">
-<head>
-	<!--[if IE]><meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"><![endif]-->
-	<meta charset="utf-8">
-	<title>Photobox - CSS3 image gallery modal viewer</title>
-	<meta name="description" content="A lightweight CSS3 image gallery that is pretty to look and and easy to use">
-	<meta name="viewport" content="width=device-width">
-	<link rel="shortcut icon" href="favicon.ico"/>
-	<link rel="stylesheet" href="demo/styles.css">
-	<link rel="stylesheet" href="photobox/photobox.css">
-	<!--[if lt IE 9]><script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
-	<script src="//ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-	<script src='photobox/jquery.photobox.js'></script>
-</head>
-<body>
-	<div id='wrap'>
-		<ul id='gallery'></ul>
-	</div>
-	<script src='demo/demo.js'></script>
-	<script>
-		var _gaq = _gaq || [];
-		_gaq.push(['_setAccount', 'UA-26520680-1']);
-		_gaq.push(['_trackPageview']);
+<div id='gallery'>
+    <a href="http://www.somedomain.com/images/image1_large.jpg">
+        <img src="http://www.somedomain.com/images/image1_small.jpg"
+            title="photo1 title">
+    </a>
+    <a href="http://www.somedomain.com/images/image2_large.jpg">
+        <img src="http://www.somedomain.com/images/image2_small.jpg"
+            alt="photo2 title">
+    </a>
+    <a href="http://www.somedomain.com/images/image3_large.jpg">
+        <img src="http://www.somedomain.com/images/image3_small.jpg"
+            title="photo3 title">
+    </a>
+    <a href="http://www.somedomain.com/images/image4_large.jpg">
+        <img src="http://www.somedomain.com/images/image4_small.jpg"
+            alt="photo4 title" data-pb-captionLink='Google website[www.google.com]'>
+    </a>
+    <a href="http://www.youtube.com/embed/W3OQgh_h4U4" rel="video">
+        <img src="http://img.youtube.com/vi/W3OQgh_h4U4/0.jpg"
+            title="PEOPLE ARE AWESOME 2013 FULL HD ">
+    </a>
+    <a href="http://www.youtube.com/embed/W3OQgh_h4U4" rel="video">
+        <img src="http://img.youtube.com/vi/W3OQgh_h4U4/0.jpg"
+            title="PEOPLE ARE AWESOME 2013 FULL HD ">
+    </a>
+</div>
+...
+...
+...
+<script>
+    // applying photobox on a `gallery` element which has lots of thumbnails links.
+    // Passing options object as well:
+    //-----------------------------------------------
+    $('#gallery').photobox('a',{ time:0 });
 
-		(function() {
-			var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-			ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-			var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-		})();
-	</script>
-</body>
-</html>
+    // using a callback and a fancier selector
+    //----------------------------------------------
+    $('#gallery').photobox('li > a.family',{ time:0 }, callback);
+    function callback(){
+       console.log('image has been loaded');
+    }
+
+    // destroy the plugin on a certain gallery:
+    //-----------------------------------------------
+    $('#gallery').photobox('destroy');
+
+    // re-initialize the photbox DOM (does what Document ready does)
+    //-----------------------------------------------
+    $('#gallery').photobox('prepareDOM');
+</script>
